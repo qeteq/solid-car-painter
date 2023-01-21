@@ -1,9 +1,10 @@
-import type { Component } from 'solid-js';
+import type { Component } from "solid-js";
+import { CarPainter } from "./CarPainter";
 
-const App: Component = () => {
-  return (
-    <p class="text-4xl text-green-700 text-center py-20">Hello tailwind!</p>
-  );
+export const App: Component = () => {
+    return (
+        <main class="min-h-full flex items-center justify-center">
+            <CarPainter />
+        </main>
+    );
 };
-
-export default App;

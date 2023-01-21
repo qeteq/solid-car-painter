@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    @apply bg-stone-50 dark:bg-stone-800;
+    @apply text-stone-800 dark:text-stone-100;
+}
+
+#root {
+    display: contents;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid;
+    @apply bg-blue-400 border-blue-500;
+    @apply dark:bg-blue-500 dark:border-blue-300;
+
+    border-radius: 9999px;
+    cursor: pointer;
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.canvas-drop-shadow {
+    --shadow-color: theme("borderColor.stone.500");
+
+    filter: drop-shadow(1px 0 0 var(--shadow-color))
+        drop-shadow(-1px 0 0 var(--shadow-color))
+        drop-shadow(0 1px 0 var(--shadow-color))
+        drop-shadow(0 -1px 0 var(--shadow-color));
+}
+
+.dark .canvas-drop-shadow {
+    --shadow-color: theme("borderColor.stone.100");
+}
+
+.hue-input {
+    background-image: linear-gradient(
+        to right,
+        #f00 0%,
+        #ff0 17%,
+        #0f0 33%,
+        #0ff 50%,
+        #00f 66%,
+        #f0f 83%,
+        #f00 100%
+    );
+}
